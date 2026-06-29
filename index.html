@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>할 일 관리</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">할 일</h1>
+      <p class="app__subtitle" id="summary">오늘 할 일을 정리해 보세요.</p>
+    </header>
+
+    <form class="add-form" id="add-form" autocomplete="off">
+      <input
+        class="add-form__input"
+        id="new-todo"
+        type="text"
+        placeholder="할 일을 입력하고 Enter"
+        aria-label="새 할 일"
+        maxlength="200"
+      />
+      <button class="add-form__btn" type="submit">추가</button>
+    </form>
+
+    <div class="filters" id="filters" role="tablist">
+      <button class="filters__btn is-active" data-filter="all" type="button">전체</button>
+      <button class="filters__btn" data-filter="active" type="button">진행 중</button>
+      <button class="filters__btn" data-filter="completed" type="button">완료</button>
+    </div>
+
+    <ul class="todo-list" id="todo-list"></ul>
+
+    <p class="empty" id="empty" hidden>표시할 할 일이 없습니다.</p>
+
+    <footer class="app__footer" id="footer" hidden>
+      <span id="count"></span>
+      <button class="link-btn" id="clear-completed" type="button">완료 항목 삭제</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
